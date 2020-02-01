@@ -1,0 +1,43 @@
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+.Post {
+  // Variables
+  $left-bulb-color: #eee;
+
+  padding: em(10) em(20);
+  margin-bottom: em(25);
+  border-left: 3px solid $left-bulb-color;
+
+  &:hover {
+    border-left-color: darken($left-bulb-color, 20%);
+  }
+
+  .emoji {
+    width: em(30);
+  }
+  h3 {
+    font-size: em(18);
+    margin: em(12) 0 em(10) 0;
+  }
+  time {
+    font-size: em(10);
+    font-weight: bold;
+  }
+  // Author Icons
+  .authors {
+    display: flex;
+
+    .author {
+      margin-right: em(7);
+
+      img {
+        width: em(24);
+        border-radius: 50%;
+      }
+    }
+  }
+}
